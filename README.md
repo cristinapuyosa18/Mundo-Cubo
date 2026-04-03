@@ -1,6 +1,6 @@
 # Mundo-Cubo
 
-## Se desea desarrollar un algoritmo en Kotlin para calcular la cantidad de cubos de agua necesarios para llenar la "Ciudad Perdida de la Atlántida" construida en el juego Mundo Cubo. La ciudad se modela como un tablero rectangular de nxm celdas, donde cada celda contiene una torre de cubos de una altura determinada.
+Se desea desarrollar un algoritmo en Kotlin para calcular la cantidad de cubos de agua necesarios para llenar la "Ciudad Perdida de la Atlántida" construida en el juego Mundo Cubo. La ciudad se modela como un tablero rectangular de nxm celdas, donde cada celda contiene una torre de cubos de una altura determinada.
 
 ## Integrantes:
 
@@ -13,18 +13,18 @@
 
 Se implementó una solución utilizando una Búsqueda en Anchura (BFS) apoyada por una Cola de Prioridad (Min-Heap).
 
-El proceso consiste en rodear inicialmente el perímetro de la ciudad agregando todas las celdas de los bordes al Min-Heap, ya que podemos asumir que fuera de los límites de la ciudad el nivel es cero y el agua en los bordes se derramará[cite: 25]. A partir de allí, el algoritmo extrae interactivamente la celda con el nivel más bajo (sea el nivel de los bloques sólidos o del agua ya estancada sobre ellos). Por cada celda vecina adyacente que no haya sido visitada, se evalúa si su altura es menor a la celda actual; en ese caso, se acumula la diferencia como agua retenida. Finalmente, el vecino se añade al heap asumiendo la nueva altura máxima entre su base original y el nivel del agua acumulada.
+El proceso consiste en rodear inicialmente el perímetro de la ciudad agregando todas las celdas de los bordes al Min-Heap, ya que podemos asumir que fuera de los límites de la ciudad el nivel es cero y el agua en los bordes se derramará. A partir de allí, el algoritmo extrae interactivamente la celda con el nivel más bajo (sea el nivel de los bloques sólidos o del agua ya estancada sobre ellos). Por cada celda vecina adyacente que no haya sido visitada, se evalúa si su altura es menor a la celda actual; en ese caso, se acumula la diferencia como agua retenida. Finalmente, el vecino se añade al heap asumiendo la nueva altura máxima entre su base original y el nivel del agua acumulada.
 
 ## Análisis de las funciones
 
 | Función         | Input               | Output | Complejidad                            | Estructura de Datos                                                                                                            |
 | :-------------- | :------------------ | :----- | :------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------- |
 | **AlfonsoJose** | `Array<Array<Int>>` | `Int`  | $O(V \log V)$ (Donde $V = n \times m$) | **PriorityQueue (Min-Heap):** Extrae la celda de menor elevación.<br>**Matriz (BooleanArray):** Registra las celdas visitadas. |
-| **main**        | `Array<String>`     | `Unit` | $O(V)$                                 | **File / Array:** Lee el archivo `.txt` y lo procesa en una matriz 2D.                                                         |
+| **main**        | `Array<String>`     | `Unit` | $O(V)$                                 | **File / Array:** Lee el archivo .txt y lo procesa en una matriz bidimensional.                                                |
 
 ### AlfonsoJose:
 
-Recibe una matriz bidimensional de enteros donde cada posición representa la altura de la torre correspondiente[cite: 34]. Inicializa el Min-Heap con los bordes de la matriz y comienza a explorar hacia el interior, actualizando la cota del agua e incrementando el contador de agua acumulada por cada cubos de agua encontrados. Retorna la cantidad total de agua almacenada.
+Recibe una matriz bidimensional de enteros donde cada posición representa la altura de la torre correspondiente. Inicializa el Min-Heap con los bordes de la matriz y comienza a explorar hacia el interior, actualizando la cota del agua e incrementando el contador de agua acumulada por cada cubos de agua encontrados. Retorna la cantidad total de agua almacenada.
 
 ### main:
 
