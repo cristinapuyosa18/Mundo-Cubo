@@ -20,7 +20,7 @@ El proceso consiste en rodear inicialmente el perímetro de la ciudad agregando 
 | Función         | Input               | Output | Complejidad                            | Estructura de Datos                                                                                                            |
 | :-------------- | :------------------ | :----- | :------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------- |
 | **AlfonsoJose** | `Array<Array<Int>>` | `Int`  | $O(V \log V)$ (Donde $V = n \times m$) | **PriorityQueue (Min-Heap):** Extrae la celda de menor elevación.<br>**Matriz (BooleanArray):** Registra las celdas visitadas. |
-| **main**        | `Array<String>`     | `Unit` | $O(V)$                                 | **File / Array:** Lee el archivo .txt y lo procesa en una matriz bidimensional.                                                |
+| **main**        | `Array<String>`     | `Unit` | $O(V)$                                 | **File** Lee el archivo .txt y lo procesa en una matriz bidimensional.                                                         |
 
 ### AlfonsoJose:
 
