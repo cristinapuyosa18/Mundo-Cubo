@@ -11,9 +11,11 @@ Se desea desarrollar un algoritmo en Kotlin para calcular la cantidad de cubos d
 
 ## Descripción
 
-Se implementó una solución utilizando una Cola de Prioridad.
+Se implementó una solución utilizando una Cola de Prioridad y una variación de Dijkstra sobre un grafo implícito.
 
-El proceso consiste en rodear inicialmente el perímetro de la ciudad agregando todas las celdas de los bordes al Min-Heap, ya que podemos asumir que fuera de los límites de la ciudad el nivel es cero y el agua en los bordes se derramará. A partir de allí, el algoritmo extrae interactivamente la celda con el nivel más bajo (sea el nivel de los bloques sólidos o del agua ya estancada sobre ellos). Por cada celda vecina adyacente que no haya sido visitada, se evalúa si su altura es menor a la celda actual; en ese caso, se acumula la diferencia como agua retenida. Finalmente, el vecino se añade al heap asumiendo la nueva altura máxima entre su base original y el nivel del agua acumulada.
+El grafo implícito G = (V, E) siendo cada celda un véctice y cada vecino su adyacente.
+
+El proceso consiste en rodear inicialmente el perímetro de la ciudad agregando todas las celdas de los bordes al Min-Heap, ya que podemos asumir que fuera de los límites de la ciudad el nivel es cero y el agua en los bordes se derramará. A partir de allí, el algoritmo extrae la celda con el nivel más bajo (sea el nivel de los bloques sólidos o del agua ya estancada sobre ellos). Por cada celda vecina adyacente que no haya sido visitada, se evalúa si su altura es menor a la celda actual; en ese caso, se acumula la diferencia como agua retenida. Finalmente, el vecino se añade al heap asumiendo la nueva altura máxima entre su base original y el nivel del agua acumulada.
 
 ## Análisis de las funciones
 
