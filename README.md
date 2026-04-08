@@ -30,4 +30,4 @@ Recibe una matriz bidimensional de enteros donde cada posición representa la al
 
 ### main:
 
-Función principal encargada de procesar la entrada de datos. Lee el archivo pasado por los argumentos de la línea de comandos, separa sus líneas para construir la matriz bidimensional de enteros requerida, ejecuta el algoritmo "sAlfonsoJose" y procede a imprimir por la salida estándar el resultado de los cubos de agua necesarios.
+Función principal encargada de procesar la entrada de datos. Lee el archivo pasado por los argumentos de la línea de comandos, separa sus líneas para construir la matriz bidimensional de enteros requerida, ejecuta el algoritmo "AlfonsoJose" y procede a imprimir por la salida estándar el resultado de los cubos de agua necesarios.
